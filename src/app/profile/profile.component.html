@@ -1,0 +1,8 @@
+<div dir="rtl" class="alert alert-warning text-right" role="alert" *ngIf="profileMsg; else profileTemplate">
+    مقررات را خوانده و قبول دارم.
+    <button (click)="acceptProfileMsg()" class="btn btn-success">تایید</button>
+</div>
+
+<ng-template #profileTemplate>
+    profile works!
+</ng-template>
