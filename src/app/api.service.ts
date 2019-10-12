@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {  }
 
-  checkIfWorking() {
-    return console.log('Yes, It is working very well!');
+  getData() {
+      return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 }

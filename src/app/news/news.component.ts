@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  news$: object;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getData().subscribe(
+      api => this.news$ = api
+    );
   }
+
+  // ngOnDestroy() {
+  //   console.log('News component is destroyed!');
+  //  }
 
 }

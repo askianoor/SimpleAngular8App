@@ -4,5 +4,44 @@
 </div>
 
 <ng-template #profileTemplate>
-    profile works!
+    <div dir="rtl" style="text-align: right;" class="container">
+        <h1 class="modal-title">ارسال پیام</h1><br>
+        <form dir="rtl" class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <h3 class="text-success" *ngIf="success">فرم ارسال شد.</h3>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="name">نام : </label>
+                <input class="col-sm-10 form-control" type="text" formControlName="name"><br>
+                <div *ngIf="submitted && profileForm.controls.name.errors">
+                    <div class="text-danger" *ngIf="profileForm.controls.name.errors.required">لطفا نام را وارد نمایید!</div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="email">ایمیل : </label>
+                <input class="col-sm-10 form-control" type="text" formControlName="email"><br>
+                <div *ngIf="submitted && profileForm.controls.email.errors">
+                    <div class="text-danger" *ngIf="profileForm.controls.email.errors.required">لطفا ایمیل را وارد نمایید!</div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">پیام : </label>
+                <textarea class="col-sm-10 form-control" formControlName="message" col="30" row="10"></textarea>
+                <div *ngIf="submitted && profileForm.controls.message.errors">
+                    <div class="text-danger" *ngIf="profileForm.controls.message.errors.required">لطفا پیام مورد نظر را وارد نمایید!</div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-success">ارسال اطلاعات</button>
+            </div>
+        </form>
+        <!-- <div *ngIf="submitted">
+            <b>Name: </b>
+            <div>{{profileForm.controls.name.value}}</div>
+
+            <b>Email: </b>
+            <div>{{profileForm.controls.email.value}}</div>
+
+            <b>Message: </b>
+            <div>{{profileForm.controls.message.value}}</div>
+        </div> -->
+    </div>
 </ng-template>
