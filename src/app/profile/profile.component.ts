@@ -4,14 +4,16 @@ import {FormBuilder, FormGroup, Validators, FormGroupDirective, RequiredValidato
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
+
 export class ProfileComponent implements OnInit {
   profileMsg = true;
 
   profileForm: FormGroup;
   submitted = false;
   success = false;
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {

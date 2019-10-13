@@ -4,7 +4,7 @@
 </div>
 
 <ng-template #profileTemplate>
-    <div dir="rtl" style="text-align: right;" class="container">
+    <div dir="rtl" class="container text-right">
         <h1 class="modal-title">ارسال پیام</h1><br>
         <form dir="rtl" class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
             <h3 class="text-success" *ngIf="success">فرم ارسال شد.</h3>

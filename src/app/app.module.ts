@@ -12,6 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimComponent } from './anim/anim.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     WalletComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    AnimComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
